@@ -1,0 +1,112 @@
+.container {
+    display: grid;
+    grid-template-columns: [start] 70vh [line2] 400px [line3] 600px [end];
+    grid-template-rows: [row1-start] 15rem [row1-end] 30vh [last];
+    gap: 20px 20px;
+}
+.container1 {
+    grid-column: 1/4;
+    grid-row: 1/1;
+}
+.container2 {
+    grid-column: 1/2;
+    grid-row: 2/4;
+}
+.container1:hover {
+    grid-column: 1/3;
+    grid-row: 1/1;
+
+}
+.img {
+    width: 250px;
+    height: 350px;
+    -webkit-animation-name: anim; /*для Safari, Chrome и браузерах на основе движков WebKit и Blink;*/
+            animation-name: anim;
+    -webkit-animation-duration: 5s; /*для Safari, Chrome и браузерах на основе движков WebKit и Blink;*/
+            animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite; /*для Safari, Chrome и браузерах на основе движков WebKit и Blink;*/
+            animation-iteration-count: infinite;
+    -o-object-fit: contain; /*для старых версиях браузера Opera*/
+       object-fit: contain;
+}
+.grid-img div {
+    width: 550px;
+    height: 450px;
+}
+.grid-img {
+    display: grid;
+    grid-template-columns: repeat(3, 550px);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "img1 . ."
+    "img2 . img3"
+    ". img4 img5";
+}
+
+.img1 {
+    grid-area: img1;
+    grid-column: 1/4;
+    grid-row: 1/1;
+}
+.img2 {
+    grid-area: img2;
+}
+.img3 {
+    grid-area: img3;
+}
+.img4 {
+    grid-area: img4;
+}
+.img5 {
+    grid-area: img5;
+}
+.img6 {
+    width: 250px;
+    height: 350px;
+    float: right; /*частично выходит из потока: все элементы блочного контекста, прописанные в коде после элемента с float, занимают его место, а элементы строчного контекста — «обтекают» его. На примере текст обтекает картирку*/
+}
+.text1 {
+    padding: 0px;
+}
+
+@-webkit-keyframes anim {
+    from {
+        position: relative;
+        left: 0px;
+    }
+    50% {
+        position: relative;
+        left: 250px;
+    }
+    to {
+        position: relative;
+        left: 0px;
+    }
+}
+
+@keyframes anim {
+    from {
+        position: relative;
+        left: 0px;
+    }
+    50% {
+        position: relative;
+        left: 250px;
+    }
+    to {
+        position: relative;
+        left: 0px;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical; /*для Safari, Chrome и браузерах на основе движков WebKit и Blink;*/
+        -webkit-box-direction: normal;/*для Safari, Chrome и браузерах на основе движков WebKit и Blink;*/
+            -ms-flex-direction: column; /*для Edge и Internet Explorer;*/
+                flex-direction: column;
+     }
+  
+}

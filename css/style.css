@@ -33,6 +33,7 @@
     width: 550px;
     height: 450px;
 }
+
 .grid-img {
     display: grid;
     grid-template-columns: repeat(3, 550px);
